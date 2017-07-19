@@ -1,0 +1,13 @@
+.timecode {
+    font-size        : 44px;
+    font-family      : $font-family-mono;
+    color            : $red;
+    width            : 100%;
+    text-align       : left;
+    padding-top      : .4rem;
+
+    .active {
+        color : $white;
+    }
+
+}

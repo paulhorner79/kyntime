@@ -1,0 +1,77 @@
+@-webkit-keyframes panelpulse {
+    0% {
+        box-shadow: 0 0 0 0 fade-out($red, 0.3);
+    }
+    70% {
+        box-shadow: 0 0 0 10px fade-out($red, 1);
+    }
+    100% {
+        box-shadow: 0 0 0 0 fade-out($red, 1);
+    }
+}
+@keyframes panelpulse {
+    0% {
+        box-shadow: 0 0 0 0 fade-out($red, 0.3);
+    }
+    70% {
+        box-shadow: 0 0 0 10px fade-out($red, 1);
+    }
+    100% {
+        box-shadow: 0 0 0 0 fade-out($red, 1);
+    }
+}
+@-webkit-keyframes iconpulse {
+    to {
+        box-shadow: 0 0 0 10px fade-out($red, 1);
+    }
+}
+@keyframes iconpulse {
+    to {
+        box-shadow: 0 0 0 10px fade-out($red, 1);
+    }
+}
+
+@keyframes changeIcon {
+    0% {
+        box-shadow: 0 0 0 0 fade-out($red, 0.3);
+        content: $fa-var-hourglass-start;
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    45% {
+        content: $fa-var-hourglass-half;
+    }
+    66% {
+        box-shadow: 0 0 0 10px fade-out($red, 1);
+    }
+    90% {
+        content: $fa-var-hourglass-end;
+    }
+    100% {
+        box-shadow: 0 0 0 0 fade-out($red, 1);
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+    }
+}
+@-webkit-keyframes changeIcon {
+    0% {
+        box-shadow: 0 0 0 0 fade-out($red, 0.3);
+        content: $fa-var-hourglass-start;
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    45% {
+        content: $fa-var-hourglass-half;
+    }
+    66% {
+        box-shadow: 0 0 0 10px fade-out($red, 1);
+    }
+    90% {
+        content: $fa-var-hourglass-end;
+    }
+    100% {
+        box-shadow: 0 0 0 0 fade-out($red, 1);
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+    }
+}

@@ -1,0 +1,23 @@
+.sections {
+    margin : .5rem 0;
+    select {
+        background-color : $white;
+        border           : $grey 1px solid;
+        border-radius    : 4px;
+        color            : $black;
+        display          : block;
+        font-family      : sans-serif;
+        height           : calc(2.25rem + 2px);
+        padding          : .5rem .75rem;
+        width            : 100%;
+        font-size        : $font-size-base;
+        font-family      : $font-family-base;
+        option {
+            font-weight : normal;
+            display     : block;
+            white-space : pre;
+            min-height  : 1.2em;
+            padding     : 0px 2px 1px;
+        }
+    }
+}
