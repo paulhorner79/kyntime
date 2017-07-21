@@ -133,7 +133,7 @@ const app = new Vue({
                     console.error(error);
                 });
             setTimeout(function(){
-                this.loadTimecode();
+                self.loadTimecode();
             }, 15000);
         },
         loadScenes : function () {

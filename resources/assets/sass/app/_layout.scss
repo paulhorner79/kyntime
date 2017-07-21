@@ -44,3 +44,10 @@ main {
     margin  : 0 0 1rem;
     padding : 0 1rem;
 }
+
+.page-content {
+    @media (min-width: 992px) {
+        max-width  : 992px;
+        margin : 0 auto 1rem;
+    }
+}
