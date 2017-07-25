@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Validator;
 use App\Scene;
 use App\Timecode;
 
@@ -31,7 +32,11 @@ class SceneController extends Controller
      */
     public function store(Request $request)
     {
-        // validate
+        $this->validate($request, [
+            'name'  => 'required|string|max:255',
+            'start' => 'required|array',
+            'end'   => 'array'
+        ]);
 
         $scene = new Scene;
         $scene->start = Timecode::makeTimecode($request->get('start'));
@@ -55,7 +60,11 @@ class SceneController extends Controller
      */
     public function update(Request $request, Scene $scene)
     {
-        // validate
+        $this->validate($request, [
+            'name'  => 'required|string|max:255',
+            'start' => 'required|array',
+            'end'   => 'array'
+        ]);
 
         $scene->start = Timecode::makeTimecode($request->get('start'));
         if ($request->has('end')) {

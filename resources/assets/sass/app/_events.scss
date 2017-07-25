@@ -1,4 +1,7 @@
 .events {
+    display   : flex;
+    flex-wrap : wrap;
+    width     : 100%;
     .event {
         border           : $grey 1px solid;
         border-radius    : 4px;
@@ -6,7 +9,37 @@
         box-shadow       : 1px 2px 4px fade-out($black, 0.7);
         color            : $black;
         padding          : .75rem;
-        margin           : .5rem 0;
+        margin           : .75rem 0;
+        width            : 100%;
+
+        @media (min-width : 560px) {
+            width : calc(50% - 2.5rem);
+            &:nth-child(odd) {
+                margin-left  : 0;
+                margin-right : .75rem;
+            }
+            &:nth-child(even) {
+                margin-left  : .75rem;
+                margin-right : 0;
+                float        : right;
+            }
+        }
+        @media (min-width : 800px) {
+            width      : calc(33.333% - 2.5rem);
+            &:nth-child(3n+1) {
+                margin-left  : 0;
+                margin-right : .75rem;
+            }
+            &:nth-child(3n+2) {
+                margin-left  : .6rem;
+                margin-right : auto;
+            }
+            &:nth-child(3n+0) {
+                margin-left  : .75rem;
+                margin-right : 0;
+                float        : right;
+            }
+        }
 
         .event-title {
             font-family    : $font-family-head;
@@ -62,34 +95,24 @@
             }
         }
         &.past {
-            color : lighten($black, 20%);
+            border-color     : darken($grey, 10%);
+            background-color : $grey;
+            box-shadow       : 1px 2px 4px fade-out($black, 0.7);
+            color            : lighten($black, 24%);
+        }
+        &.pre {
+            color            : $white;
+            background-color : $black;
+            border-color     : $black;
+            box-shadow       : 1px 2px 4px fade-out($black, 0.5);
         }
     }
-    .current-events {
-        .event {
-            margin-bottom: 1rem;
-        }
-    }
-    .deferred-events {
-        background-color : $grey-light;
-        padding          : .5rem 1.5rem;
-        margin           : 1rem -1rem -1rem -1rem;
-        border-top       : 1px solid $grey;
-        @media (min-width: 992px) {
-            background-color : $white;
-            border           : none;
-            margin           : 0;
-            padding          : 0;
-        }
-        h5 {
-            padding-top : .5rem;
-            font-size   : $font-size-large;
-            font-weight : $font-weight-strong;
-            &:before {
-                font-family    : FontAwesome;
-                content        : $fa-var-calendar-times-o;
-                padding-right  : 10px;
-            }
+    &.started {
+        .pre {
+            border-color     : darken($grey, 10%);
+            background-color : $grey;
+            color            : lighten($black, 24%);
+            box-shadow       : 1px 2px 4px fade-out($black, 0.7);
         }
     }
 }

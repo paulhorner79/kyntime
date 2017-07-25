@@ -11,7 +11,7 @@ Scenes
         <tr>
             <th>Title</th>
             <th>Start</th>
-            <th>End</th>
+            <th class="hidden-xs hidden-sm">End</th>
             <th></th>
         </tr>
     </thead>
@@ -26,7 +26,7 @@ Scenes
                     {{$scene->start['readable']}}
                 @endif
             </td>
-            <td>
+            <td class="hidden-xs hidden-sm">
                 @if ($scene->end)
                     {{$scene->end['readable']}}
                 @endif

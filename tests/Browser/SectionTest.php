@@ -28,7 +28,8 @@ class SectionTest extends DuskTestCase
                   ->assertDontSeeIn('.table', 'Test Section')
                   ->press('@add_link');
             $admin->whenAvailable('#addModal', function ($modal) {
-                $modal->type('@add_name', 'Test Section')
+                $modal->type('input[name=name]', 'Test Section')
+                      ->pause(50)
                       ->press('@add_btn');
             });
             $admin->waitFor('.alerts')
@@ -46,7 +47,8 @@ class SectionTest extends DuskTestCase
                   ->assertDontSeeIn('.table', 'Test Section (Edited)')
                   ->press('@edit_link')
                   ->whenAvailable('#editModal', function ($modal) {
-                        $modal->type('@edit_name', 'Test Section (Edited)')
+                        $modal->type('input[name=name]', 'Test Section (Edited)')
+                              ->pause(50)
                               ->press('@edit_btn');
                   })
                   ->waitFor('.alerts')

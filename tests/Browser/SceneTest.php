@@ -33,6 +33,7 @@ class SceneTest extends DuskTestCase
                       ->type('@add_h', '2')
                       ->type('@add_m', '30')
                       ->type('@add_s', '0')
+                      ->pause(50)
                       ->press('@add_btn');
             });
             $admin->waitFor('.alerts')
@@ -51,6 +52,7 @@ class SceneTest extends DuskTestCase
                   ->press('@edit_link');
             $admin->whenAvailable('#editModal', function ($modal) {
                 $modal->type('@edit_name', 'Test Scene (Edited)')
+                      ->pause(50)
                       ->press('@edit_btn');
             });
             $admin->waitFor('.alerts')

@@ -44,11 +44,12 @@ class HomePage extends Page
             '@scenes'       => 'div.scenes',
             '@thisScene'    => 'div.scenes > table > tbody > tr.current',
             '@events'       => '.events',
-            '@firstEvent'   => '.events > div > div.event:first-child',
-            '@pending'      => '.events .future-events',
-            '@future'       => '.events .future-events',
-            '@current'      => '.events .current-events',
-            '@past'         => '.events .deferred-events',
+            '@firstEvent'   => '.events .event:first-child',
+            '@pending'      => '.events .event.pending:first-child',
+            '@future'       => '.events .event.future:first-child',
+            '@current'      => '.events .event.current:first-child',
+            '@past'         => '.events .event.past:last-child',
+            '@pre'          => '.events .event.pre:first-child',
         ];
     }
 }

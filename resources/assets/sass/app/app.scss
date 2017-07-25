@@ -10,3 +10,7 @@
 @import "sections";
 @import "events";
 @import "transitions";
+
+@-ms-viewport{
+    width: device-width;
+}

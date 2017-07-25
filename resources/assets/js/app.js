@@ -222,7 +222,7 @@ const app = new Vue({
                     second : this.timer.format('s')
                 });
             }
-            return moment();
+            return this.getMidnight();
         },
         getMoment : function (h, m, s) {
             return moment().set({

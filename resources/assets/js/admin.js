@@ -13,7 +13,7 @@ $(function() {
 
         modal.find('form').attr('action', url);
         modal.find('input[name=name]').val(title);
-        if (active === 1) {
+        if (parseInt(active) === 1) {
             modal.find('input[name=active]').prop('checked', true);
         }
         else {
@@ -49,7 +49,7 @@ $(function() {
         $('#minute-edit').val(code.minute);
         $('#second-edit').val(code.second);
 
-        if (active === 1) {
+        if (parseInt(active) === 1) {
             modal.find('input[name=active]').prop('checked', true);
         }
         else {

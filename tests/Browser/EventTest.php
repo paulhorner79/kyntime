@@ -33,6 +33,7 @@ class EventTest extends DuskTestCase
                       ->type('@add_h', '2')
                       ->type('@add_m', '29')
                       ->type('@add_s', '59')
+                      ->pause(50)
                       ->press('@add_btn');
             });
             $admin->waitFor('.alerts')
@@ -50,7 +51,8 @@ class EventTest extends DuskTestCase
                   ->assertDontSeeIn('.table', 'ZTest Event (Edited)')
                   ->press('@edit_link');
             $admin->whenAvailable('#editModal', function ($modal) {
-                $modal->type('@edit_name', 'ZTest Event (Edited)')
+                $modal->type('name', 'ZTest Event (Edited)')
+                      ->pause(50)
                       ->press('@edit_btn');
             });
             $admin->waitFor('.alerts')

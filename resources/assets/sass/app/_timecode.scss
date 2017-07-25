@@ -9,5 +9,14 @@
     .active {
         color : $white;
     }
-
+    a {
+        display : none;
+    }
+}
+.admin .timecode a {
+    display         : inline;
+    float           : right;
+    color           : $red;
+    text-decoration : none;
+    margin          : .15rem 1.4rem 0 0;
 }

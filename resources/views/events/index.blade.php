@@ -10,7 +10,7 @@
     <thead>
         <tr>
             <th>Title</th>
-            <th>Notes</th>
+            <th class="hidden-xs hidden-sm">Notes</th>
             <th>Timecode</th>
             <th>Active?</th>
             <th></th>
@@ -22,7 +22,7 @@
             <td>
                 {{$event}}
             </td>
-            <td>
+            <td class="hidden-xs hidden-sm">
                 {{$event->notes}}
             </td>
             <td>

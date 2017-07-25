@@ -7,3 +7,8 @@ Route::get('scenes', 'ApiController@scenes')->name('api.scenes');
 Route::get('sections', 'ApiController@sections')->name('api.sections');
 Route::get('sections/{section_id}', 'ApiController@events')->name('api.section.events');
 Route::get('events', 'ApiController@allEvents')->name('api.events');
+
+Route::post('worker/{job}', [
+    'as'   => 'api.job',
+    'uses' => 'WorkerController@worker'
+]);

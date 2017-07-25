@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Validator;
 use App\Section;
 
 class SectionController extends Controller
@@ -29,7 +30,9 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        // validate
+        $this->validate($request, [
+            'name'  => 'required|string|max:255'
+        ]);
 
         $section = new Section;
         $section->name = $request->get('name');
@@ -50,7 +53,9 @@ class SectionController extends Controller
      */
     public function update(Request $request, Section $section)
     {
-        // validate
+        $this->validate($request, [
+            'name'  => 'required|string|max:255'
+        ]);
 
         $section->name = $request->get('name');
         $section->active = $request->has('active');

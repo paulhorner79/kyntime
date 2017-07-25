@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Validator;
 use App\Section;
 use App\Event;
 use App\Timecode;
@@ -34,7 +35,10 @@ class EventController extends Controller
      */
     public function store(Request $request, Section $section)
     {
-        // validate
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'timecode' => 'required|array'
+        ]);
 
         $event = new Event;
         $event->section_id = $section->id;
@@ -58,7 +62,10 @@ class EventController extends Controller
      */
     public function update(Request $request, Section $section, Event $event)
     {
-        // validate
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'timecode' => 'required|array'
+        ]);
 
         $event->timecode = Timecode::makeTimecode($request->get('timecode'));
         $event->name = $request->get('name');
